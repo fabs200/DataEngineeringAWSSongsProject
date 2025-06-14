@@ -67,7 +67,7 @@ Desktop.ini
 *.key
 
 # dotenv environment variables
-.env
+*.env
 
 # Spark output
 spark-warehouse/
