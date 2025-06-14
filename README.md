@@ -17,7 +17,7 @@ The resulting tables provide valuable insights that support Sparkify’s analyti
 
 ## Structure
 
-1. create_redshift_cluster.py (available, created): Sets up the cluster, assigns roles, etc.
+1. initiate_redshift_cluster.py (available, created): Sets up the cluster, assigns roles, etc.
 
 2. create_tables.py (with template): Creates tables in the Redshift cluster using data models, but the tables are still empty.
 
