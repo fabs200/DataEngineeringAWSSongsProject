@@ -1,0 +1,6 @@
+configparser
+psycopg2
+sql_queries
+pandas
+boto3
+dotenv
