@@ -5,8 +5,6 @@ from load_config import load_config
 
 # Konfiguration des Loggers
 logger = get_logger(__name__)
-logger.info("Dies ist eine Info-Nachricht")
-logger.error("Hier ist ein Fehler aufgetreten!")
 
 # Laden der Konfiguration
 KEY, SECRET, dwh_params = load_config()
