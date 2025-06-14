@@ -17,13 +17,13 @@ The resulting tables provide valuable insights that support Sparkify’s analyti
 
 ## Structure
 
-1. initiate_redshift_cluster.py (available, created): Sets up the cluster, assigns roles, etc.
+1. initiate_redshift_cluster.py: Sets up the cluster, assigns roles, etc.
 
 2. create_tables.py (with template): Creates tables in the Redshift cluster using data models, but the tables are still empty.
 
 3. etl.py (with template): Loads data from S3 buckets; the data is initially in JSON format and needs to be converted into tabular data using Pandas before being loaded into the Redshift cluster database.
 
-4. analyze_songs_data.py (not yet available): The data is stored in the Redshift cluster and is ready for analysis, but the script has not been created yet.
+4. analyze_songs_data.py (TODO): The data is stored in the Redshift cluster and is ready for analysis, but the script has not been created yet.
 
 5. clean_up_cluster.py: cleanup of AWS Redshift resources, including deleting a Redshift cluster and its associated IAM role and policy
 
