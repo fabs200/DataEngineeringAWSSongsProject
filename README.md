@@ -25,3 +25,5 @@ The resulting tables provide valuable insights that support Sparkify’s analyti
 
 4. analyze_songs_data.py (not yet available): The data is stored in the Redshift cluster and is ready for analysis, but the script has not been created yet.
 
+5. clean_up_cluster.py: cleanup of AWS Redshift resources, including deleting a Redshift cluster and its associated IAM role and policy
+
