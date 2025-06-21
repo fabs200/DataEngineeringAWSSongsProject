@@ -27,3 +27,68 @@ The resulting tables provide valuable insights that support Sparkify’s analyti
 
 5. clean_up_cluster.py: cleanup of AWS Redshift resources, including deleting a Redshift cluster and its associated IAM role and policy
 
+## Example Queries for Data Analysis
+
+After running the ETL pipeline, you can perform analytics queries on the data warehouse. Here are some examples:
+
+### Top 10 Most Popular Songs
+
+```sql
+SELECT s.title, a.name as artist, COUNT(*) as play_count
+FROM songplays sp
+JOIN songs s ON sp.song_id = s.song_id
+JOIN artists a ON sp.artist_id = a.artist_id
+GROUP BY s.title, a.name
+ORDER BY play_count DESC
+LIMIT 10;
+```
+
+### Most Active Users
+
+```sql
+SELECT u.user_id, u.first_name, u.last_name, COUNT(*) as song_count
+FROM songplays sp
+JOIN users u ON sp.user_id = u.user_id
+GROUP BY u.user_id, u.first_name, u.last_name
+ORDER BY song_count DESC
+LIMIT 10;
+```
+
+### Popular Listening Times
+
+```sql
+SELECT t.hour, COUNT(*) as play_count
+FROM songplays sp
+JOIN time t ON sp.start_time = t.start_time
+GROUP BY t.hour
+ORDER BY play_count DESC;
+```
+
+### Song Distribution by Day of Week
+
+```sql
+SELECT 
+    CASE t.weekday
+        WHEN 0 THEN 'Sunday'
+        WHEN 1 THEN 'Monday'
+        WHEN 2 THEN 'Tuesday'
+        WHEN 3 THEN 'Wednesday'
+        WHEN 4 THEN 'Thursday'
+        WHEN 5 THEN 'Friday'
+        WHEN 6 THEN 'Saturday'
+    END as day_of_week,
+    COUNT(*) as play_count
+FROM songplays sp
+JOIN time t ON sp.start_time = t.start_time
+GROUP BY t.weekday
+ORDER BY play_count DESC;
+```
+
+### Paid vs Free User Activity
+
+```sql
+SELECT u.level, COUNT(DISTINCT u.user_id) as user_count, COUNT(*) as play_count
+FROM songplays sp
+JOIN users u ON sp.user_id = u.user_id
+GROUP BY u.level;
+```

@@ -1,6 +1,5 @@
 configparser
-psycopg2
-sql_queries
+psycopg2-binary
 pandas
 boto3
-dotenv
+python-dotenv
