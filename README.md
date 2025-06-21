@@ -23,9 +23,7 @@ The resulting tables provide valuable insights that support Sparkify’s analyti
 
 3. etl.py (with template): Loads data from S3 buckets; the data is initially in JSON format and needs to be converted into tabular data using Pandas before being loaded into the Redshift cluster database.
 
-4. analyze_songs_data.py (TODO): The data is stored in the Redshift cluster and is ready for analysis, but the script has not been created yet.
-
-5. clean_up_cluster.py: cleanup of AWS Redshift resources, including deleting a Redshift cluster and its associated IAM role and policy
+4. clean_up_cluster.py: cleanup of AWS Redshift resources, including deleting a Redshift cluster and its associated IAM role and policy
 
 ## Example Queries for Data Analysis
 
